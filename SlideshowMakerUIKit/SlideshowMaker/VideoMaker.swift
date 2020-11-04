@@ -9,7 +9,7 @@
 import UIKit
 import AVFoundation
 
-public class VideoMaker: NSObject {
+public class VideoMakerOld: NSObject {
     
     public typealias CompletedCombineBlock = (_ success: Bool, _ videoURL: URL?) -> Void
     public typealias Progress = (_ progress: Float) -> Void
@@ -86,7 +86,7 @@ public class VideoMaker: NSObject {
         self.isMovement = true
     }
     
-    public func exportVideo(audio: AVURLAsset?, audioTimeRange: CMTimeRange?, completed: @escaping CompletedCombineBlock) -> VideoMaker {
+    public func exportVideo(audio: AVURLAsset?, audioTimeRange: CMTimeRange?, completed: @escaping CompletedCombineBlock) -> VideoMakerOldgit  {
         self.createDirectory()
         self.currentProgress = 0.0
         self.combineVideo { (success, url) in

@@ -26,7 +26,7 @@ class ViewController: UIViewController {
         }
                 
         // OR: VideoMaker(images: images, movement: ImageMovement.fade)
-        let maker = VideoMaker(images: images, transition: ImageTransition.crossFade)
+        let maker = VideoMakerOld(images: images, transition: ImageTransition.crossFade)
             
         maker.contentMode = UIView.ContentMode.scaleAspectFit
                 
