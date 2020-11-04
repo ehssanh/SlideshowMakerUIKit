@@ -35,9 +35,15 @@ class ViewController: UIViewController {
                 print(url)  //
 
                 let player = AVPlayer(url: url)
+                let playerLayer = AVPlayerLayer(player: player)
+                self.view.layer.addSublayer(playerLayer)
+                playerLayer.frame = self.view.layer.bounds
+                playerLayer.videoGravity = .resize
+                
                 player.allowsExternalPlayback = true
                 let playerVC = AVPlayerViewController()
                 playerVC.player = player
+                playerVC.videoGravity = .resize
                 self.present(playerVC, animated: true) {
                     //noop
                 }
