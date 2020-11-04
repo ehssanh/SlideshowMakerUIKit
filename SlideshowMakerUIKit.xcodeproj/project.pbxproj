@@ -8,14 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		08E0EDE525532F7C0006FFB3 /* VideoMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E0EDE425532F7C0006FFB3 /* VideoMaker.swift */; };
-		08E0EDF0255330770006FFB3 /* livePhoto6.mov in Resources */ = {isa = PBXBuildFile; fileRef = 08E0EDE8255330770006FFB3 /* livePhoto6.mov */; };
-		08E0EDF1255330770006FFB3 /* livePhoto4.mov in Resources */ = {isa = PBXBuildFile; fileRef = 08E0EDE9255330770006FFB3 /* livePhoto4.mov */; };
-		08E0EDF2255330770006FFB3 /* livePhoto5.mov in Resources */ = {isa = PBXBuildFile; fileRef = 08E0EDEA255330770006FFB3 /* livePhoto5.mov */; };
 		08E0EDF3255330770006FFB3 /* sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 08E0EDEB255330770006FFB3 /* sound.mp3 */; };
-		08E0EDF4255330770006FFB3 /* livePhoto1.mov in Resources */ = {isa = PBXBuildFile; fileRef = 08E0EDEC255330770006FFB3 /* livePhoto1.mov */; };
-		08E0EDF5255330770006FFB3 /* livePhoto2.mov in Resources */ = {isa = PBXBuildFile; fileRef = 08E0EDED255330770006FFB3 /* livePhoto2.mov */; };
-		08E0EDF6255330770006FFB3 /* livePhoto3.mov in Resources */ = {isa = PBXBuildFile; fileRef = 08E0EDEE255330770006FFB3 /* livePhoto3.mov */; };
-		08E0EDF7255330770006FFB3 /* chill.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 08E0EDEF255330770006FFB3 /* chill.mp4 */; };
+		08E0EE0C255341960006FFB3 /* livePhoto1.mov in Resources */ = {isa = PBXBuildFile; fileRef = 08E0EE06255341950006FFB3 /* livePhoto1.mov */; };
+		08E0EE0D255341960006FFB3 /* livePhoto2.mov in Resources */ = {isa = PBXBuildFile; fileRef = 08E0EE07255341950006FFB3 /* livePhoto2.mov */; };
+		08E0EE0E255341960006FFB3 /* livePhoto4.mov in Resources */ = {isa = PBXBuildFile; fileRef = 08E0EE08255341950006FFB3 /* livePhoto4.mov */; };
+		08E0EE0F255341960006FFB3 /* livePhoto5.mov in Resources */ = {isa = PBXBuildFile; fileRef = 08E0EE09255341950006FFB3 /* livePhoto5.mov */; };
+		08E0EE10255341960006FFB3 /* livePhoto3.mov in Resources */ = {isa = PBXBuildFile; fileRef = 08E0EE0A255341960006FFB3 /* livePhoto3.mov */; };
+		08E0EE11255341960006FFB3 /* livePhoto6.mov in Resources */ = {isa = PBXBuildFile; fileRef = 08E0EE0B255341960006FFB3 /* livePhoto6.mov */; };
 		BF0E863725508D6900CBF319 /* VideoMontage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0E863625508D6900CBF319 /* VideoMontage.swift */; };
 		BF0E863A2550AA6400CBF319 /* MontageMedia.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0E86392550AA6400CBF319 /* MontageMedia.swift */; };
 		BF0E863D2550AA7F00CBF319 /* MontageRenderConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0E863C2550AA7F00CBF319 /* MontageRenderConfig.swift */; };
@@ -36,14 +35,14 @@
 
 /* Begin PBXFileReference section */
 		08E0EDE425532F7C0006FFB3 /* VideoMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoMaker.swift; sourceTree = "<group>"; };
-		08E0EDE8255330770006FFB3 /* livePhoto6.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = livePhoto6.mov; sourceTree = "<group>"; };
-		08E0EDE9255330770006FFB3 /* livePhoto4.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = livePhoto4.mov; sourceTree = "<group>"; };
-		08E0EDEA255330770006FFB3 /* livePhoto5.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = livePhoto5.mov; sourceTree = "<group>"; };
 		08E0EDEB255330770006FFB3 /* sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sound.mp3; sourceTree = "<group>"; };
-		08E0EDEC255330770006FFB3 /* livePhoto1.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = livePhoto1.mov; sourceTree = "<group>"; };
-		08E0EDED255330770006FFB3 /* livePhoto2.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = livePhoto2.mov; sourceTree = "<group>"; };
-		08E0EDEE255330770006FFB3 /* livePhoto3.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = livePhoto3.mov; sourceTree = "<group>"; };
-		08E0EDEF255330770006FFB3 /* chill.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = chill.mp4; sourceTree = "<group>"; };
+		08E0EE06255341950006FFB3 /* livePhoto1.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = livePhoto1.mov; sourceTree = "<group>"; };
+		08E0EE07255341950006FFB3 /* livePhoto2.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = livePhoto2.mov; sourceTree = "<group>"; };
+		08E0EE08255341950006FFB3 /* livePhoto4.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = livePhoto4.mov; sourceTree = "<group>"; };
+		08E0EE09255341950006FFB3 /* livePhoto5.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = livePhoto5.mov; sourceTree = "<group>"; };
+		08E0EE0A255341960006FFB3 /* livePhoto3.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = livePhoto3.mov; sourceTree = "<group>"; };
+		08E0EE0B255341960006FFB3 /* livePhoto6.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = livePhoto6.mov; sourceTree = "<group>"; };
+		08E0EE1C255344B50006FFB3 /* chill.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = chill.mp4; sourceTree = "<group>"; };
 		BF0E863625508D6900CBF319 /* VideoMontage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoMontage.swift; sourceTree = "<group>"; };
 		BF0E86392550AA6400CBF319 /* MontageMedia.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MontageMedia.swift; sourceTree = "<group>"; };
 		BF0E863C2550AA7F00CBF319 /* MontageRenderConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MontageRenderConfig.swift; sourceTree = "<group>"; };
@@ -78,14 +77,15 @@
 		08E0EDE7255330770006FFB3 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				08E0EDE8255330770006FFB3 /* livePhoto6.mov */,
-				08E0EDE9255330770006FFB3 /* livePhoto4.mov */,
-				08E0EDEA255330770006FFB3 /* livePhoto5.mov */,
+				08E0EE1C255344B50006FFB3 /* chill.mp4 */,
 				08E0EDEB255330770006FFB3 /* sound.mp3 */,
-				08E0EDEC255330770006FFB3 /* livePhoto1.mov */,
-				08E0EDED255330770006FFB3 /* livePhoto2.mov */,
-				08E0EDEE255330770006FFB3 /* livePhoto3.mov */,
-				08E0EDEF255330770006FFB3 /* chill.mp4 */,
+				08E0EE06255341950006FFB3 /* livePhoto1.mov */,
+				08E0EE07255341950006FFB3 /* livePhoto2.mov */,
+				08E0EE0A255341960006FFB3 /* livePhoto3.mov */,
+				08E0EE08255341950006FFB3 /* livePhoto4.mov */,
+				08E0EE09255341950006FFB3 /* livePhoto5.mov */,
+				08E0EE0B255341960006FFB3 /* livePhoto6.mov */,
+				BF0E86562551CF1F00CBF319 /* ehssan_classical_trimmed.mp3 */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -141,7 +141,6 @@
 				BF950308254CC24C0012F0AF /* ViewController.swift */,
 				BF95030A254CC24C0012F0AF /* Main.storyboard */,
 				BF95030D254CC24F0012F0AF /* Assets.xcassets */,
-				BF0E86562551CF1F00CBF319 /* ehssan_classical_trimmed.mp3 */,
 				BF95030F254CC24F0012F0AF /* LaunchScreen.storyboard */,
 				BF950312254CC24F0012F0AF /* Info.plist */,
 			);
@@ -205,18 +204,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				08E0EDF7255330770006FFB3 /* chill.mp4 in Resources */,
 				08E0EDF3255330770006FFB3 /* sound.mp3 in Resources */,
+				08E0EE0D255341960006FFB3 /* livePhoto2.mov in Resources */,
+				08E0EE0C255341960006FFB3 /* livePhoto1.mov in Resources */,
 				BF950311254CC24F0012F0AF /* LaunchScreen.storyboard in Resources */,
+				08E0EE0E255341960006FFB3 /* livePhoto4.mov in Resources */,
 				BF95030E254CC24F0012F0AF /* Assets.xcassets in Resources */,
+				08E0EE0F255341960006FFB3 /* livePhoto5.mov in Resources */,
 				BF0E86572551CF1F00CBF319 /* ehssan_classical_trimmed.mp3 in Resources */,
-				08E0EDF5255330770006FFB3 /* livePhoto2.mov in Resources */,
-				08E0EDF2255330770006FFB3 /* livePhoto5.mov in Resources */,
+				08E0EE11255341960006FFB3 /* livePhoto6.mov in Resources */,
 				BF95030C254CC24C0012F0AF /* Main.storyboard in Resources */,
-				08E0EDF1255330770006FFB3 /* livePhoto4.mov in Resources */,
-				08E0EDF4255330770006FFB3 /* livePhoto1.mov in Resources */,
-				08E0EDF6255330770006FFB3 /* livePhoto3.mov in Resources */,
-				08E0EDF0255330770006FFB3 /* livePhoto6.mov in Resources */,
+				08E0EE10255341960006FFB3 /* livePhoto3.mov in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

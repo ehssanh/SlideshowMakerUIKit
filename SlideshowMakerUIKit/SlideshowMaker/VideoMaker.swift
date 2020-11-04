@@ -41,7 +41,6 @@ public class VideoMaker: NSObject {
             }
         }
 
-
         let videoItem = VideoItem(video: composition, audio: audioAsset)
         let videoExporter = VideoExporter(withe: videoItem)
         videoExporter.export()
