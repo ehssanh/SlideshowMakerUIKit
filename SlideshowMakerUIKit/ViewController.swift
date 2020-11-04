@@ -11,10 +11,15 @@ import AVKit
 
 class ViewController: UIViewController {
 
+    private let images = [#imageLiteral(resourceName: "img0"), #imageLiteral(resourceName: "img1"), #imageLiteral(resourceName: "img2"), #imageLiteral(resourceName: "img3")]
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         
+        testVideoMaker()
+    }
+    
+    private func testOldVideoMaker() {
         let images = [#imageLiteral(resourceName: "img0"), #imageLiteral(resourceName: "img1"), #imageLiteral(resourceName: "img2"), #imageLiteral(resourceName: "img3")]
                 
         var audio: AVURLAsset?
@@ -34,27 +39,11 @@ class ViewController: UIViewController {
             if let url = videoURL {
                 print(url)  //
 
-                let player = AVPlayer(url: url)
-                let playerLayer = AVPlayerLayer(player: player)
-                self.view.layer.addSublayer(playerLayer)
-                playerLayer.frame = self.view.layer.bounds
-                playerLayer.videoGravity = .resize
-                
-                player.allowsExternalPlayback = true
-                let playerVC = AVPlayerViewController()
-                playerVC.player = player
-                playerVC.videoGravity = .resize
-                self.present(playerVC, animated: true) {
-                    //noop
-                }
-
-
             }
-        }).progress = { progress in
-            print(progress)
-        }
-        
-        
+        })
+    }
+
+    private func testVideoMontage() {
         // Simplified
         let montage = VideoMontage()
         let source = MontageSourceMedia(images: images)
@@ -74,8 +63,84 @@ class ViewController: UIViewController {
         }).progress = { prog in
             print(prog)
         }
-   }
+    }
 
+    private func testVideoMaker() {
 
+        let livePhotosName = ["livePhoto1",
+                              "livePhoto2",
+                              "livePhoto3",
+                              "livePhoto4",
+                              "livePhoto5",
+                              "livePhoto6"]
+
+        var photoAssets: [PhotoAsset] = images.map { .photo($0) }
+
+        livePhotosName.forEach { fileName in
+            if let videoUrl = Bundle.main.url(forResource: fileName, withExtension: "mov") {
+                let videoAsset = AVURLAsset(url: videoUrl)
+                photoAssets.append(.video(videoAsset))
+            }
+        }
+
+        var audioAsset: AVURLAsset?
+
+        if let audioURL = Bundle.main.url(forResource: "ehssan_classical_trimmed", withExtension: "mp3") {
+            audioAsset = AVURLAsset(url: audioURL)
+            let audioDuration = CMTime(seconds: 30, preferredTimescale: audioAsset!.duration.timescale)
+        }
+
+        VideoMaker.makeVideo(photoAssets: photoAssets, audioAsset: audioAsset) { videoUrl in
+            if let url = videoUrl {
+                print(url)  // /Library/Mov/merge.mov
+                self.playVideo(videoUrl: url)
+            }
+        }
+    }
+
+    private func testVideoMakerOld() {
+        var audio: AVURLAsset?
+        var timeRange: CMTimeRange?
+        if let audioURL = Bundle.main.url(forResource: "ehssan_classical_trimmed", withExtension: "mp3") {
+            audio = AVURLAsset(url: audioURL)
+            let audioDuration = CMTime(seconds: 30, preferredTimescale: audio!.duration.timescale)
+            timeRange = CMTimeRange(start: CMTime.zero, duration: audioDuration)
+        }
+
+        // OR: VideoMaker(images: images, movement: ImageMovement.fade)
+        let maker = VideoMakerOld(images: images, transition: ImageTransition.crossFade)
+        testVideoMaker()
+        maker.contentMode = UIView.ContentMode.scaleAspectFit
+
+        maker.exportVideo(audio: audio, audioTimeRange: timeRange, completed: { success, videoURL in
+            if let url = videoURL {
+                print(url)  //
+
+                self.playVideo(videoUrl: url)
+            }
+        }).progress = { progress in
+            print(progress)
+        }
+    }
+
+    private func playVideo(videoUrl: URL) {
+        DispatchQueue.main.async {
+            let player = AVPlayer(url: videoUrl)
+            let playerLayer = AVPlayerLayer(player: player)
+            self.view.layer.addSublayer(playerLayer)
+            playerLayer.frame = self.view.layer.bounds
+            playerLayer.videoGravity = .resize
+            player.play()
+            
+            
+//            player.allowsExternalPlayback = true
+//            let playerVC = AVPlayerViewController()
+//            playerVC.player = player
+//            playerVC.videoGravity = .resize
+//            self.present(playerVC, animated: true) {
+//                //noop
+//            }
+        }
+        
+    }
 }
-
