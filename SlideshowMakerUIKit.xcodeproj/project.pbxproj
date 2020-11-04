@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		08E0EDE525532F7C0006FFB3 /* VideoMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E0EDE425532F7C0006FFB3 /* VideoMaker.swift */; };
 		BF0E863725508D6900CBF319 /* VideoMontage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0E863625508D6900CBF319 /* VideoMontage.swift */; };
 		BF0E863A2550AA6400CBF319 /* MontageMedia.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0E86392550AA6400CBF319 /* MontageMedia.swift */; };
 		BF0E863D2550AA7F00CBF319 /* MontageRenderConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0E863C2550AA7F00CBF319 /* MontageRenderConfig.swift */; };
@@ -14,7 +15,7 @@
 		BF0E86572551CF1F00CBF319 /* ehssan_classical_trimmed.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BF0E86562551CF1F00CBF319 /* ehssan_classical_trimmed.mp3 */; };
 		BF495519255329F1003132EC /* VideoExporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF495514255329F1003132EC /* VideoExporter.swift */; };
 		BF49551A255329F1003132EC /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF495515255329F1003132EC /* UIImage.swift */; };
-		BF49551B255329F1003132EC /* VideoMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF495516255329F1003132EC /* VideoMaker.swift */; };
+		BF49551B255329F1003132EC /* VideoMakerOld.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF495516255329F1003132EC /* VideoMakerOld.swift */; };
 		BF49551C255329F1003132EC /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF495517255329F1003132EC /* Constant.swift */; };
 		BF49551D255329F1003132EC /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF495518255329F1003132EC /* Enum.swift */; };
 		BF950305254CC24C0012F0AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF950304254CC24C0012F0AF /* AppDelegate.swift */; };
@@ -27,6 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		08E0EDE425532F7C0006FFB3 /* VideoMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoMaker.swift; sourceTree = "<group>"; };
 		BF0E863625508D6900CBF319 /* VideoMontage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoMontage.swift; sourceTree = "<group>"; };
 		BF0E86392550AA6400CBF319 /* MontageMedia.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MontageMedia.swift; sourceTree = "<group>"; };
 		BF0E863C2550AA7F00CBF319 /* MontageRenderConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MontageRenderConfig.swift; sourceTree = "<group>"; };
@@ -34,7 +36,7 @@
 		BF0E86562551CF1F00CBF319 /* ehssan_classical_trimmed.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ehssan_classical_trimmed.mp3; sourceTree = "<group>"; };
 		BF495514255329F1003132EC /* VideoExporter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoExporter.swift; sourceTree = "<group>"; };
 		BF495515255329F1003132EC /* UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
-		BF495516255329F1003132EC /* VideoMaker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoMaker.swift; sourceTree = "<group>"; };
+		BF495516255329F1003132EC /* VideoMakerOld.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoMakerOld.swift; sourceTree = "<group>"; };
 		BF495517255329F1003132EC /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		BF495518255329F1003132EC /* Enum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enum.swift; sourceTree = "<group>"; };
 		BF950301254CC24C0012F0AF /* SlideshowMakerUIKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SlideshowMakerUIKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -77,7 +79,8 @@
 				BF495518255329F1003132EC /* Enum.swift */,
 				BF495515255329F1003132EC /* UIImage.swift */,
 				BF495514255329F1003132EC /* VideoExporter.swift */,
-				BF495516255329F1003132EC /* VideoMaker.swift */,
+				BF495516255329F1003132EC /* VideoMakerOld.swift */,
+				08E0EDE425532F7C0006FFB3 /* VideoMaker.swift */,
 			);
 			path = SlideshowMaker;
 			sourceTree = "<group>";
@@ -188,6 +191,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08E0EDE525532F7C0006FFB3 /* VideoMaker.swift in Sources */,
 				BF950309254CC24C0012F0AF /* ViewController.swift in Sources */,
 				BF950305254CC24C0012F0AF /* AppDelegate.swift in Sources */,
 				BF49551D255329F1003132EC /* Enum.swift in Sources */,
@@ -195,7 +199,7 @@
 				BF0E863D2550AA7F00CBF319 /* MontageRenderConfig.swift in Sources */,
 				BF0E863A2550AA6400CBF319 /* MontageMedia.swift in Sources */,
 				BF950307254CC24C0012F0AF /* SceneDelegate.swift in Sources */,
-				BF49551B255329F1003132EC /* VideoMaker.swift in Sources */,
+				BF49551B255329F1003132EC /* VideoMakerOld.swift in Sources */,
 				BF49551A255329F1003132EC /* UIImage.swift in Sources */,
 				BF49551C255329F1003132EC /* Constant.swift in Sources */,
 				BF495519255329F1003132EC /* VideoExporter.swift in Sources */,

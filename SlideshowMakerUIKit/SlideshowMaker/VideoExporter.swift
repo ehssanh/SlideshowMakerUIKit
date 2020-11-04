@@ -11,8 +11,8 @@ import AVFoundation
 
 public struct VideoItem {
     
-    var video: AVURLAsset!
-    var audio: AVURLAsset?
+    var video: AVAsset!
+    var audio: AVAsset?
     var audioTimeRange: CMTimeRange?
 }
 
@@ -133,7 +133,7 @@ extension VideoExporter {
         }
     }
     
-    fileprivate func addAudio(audio: AVURLAsset, start: CMTime, timeRage: CMTimeRange, audioCompositionTrack: AVMutableCompositionTrack) {
+    fileprivate func addAudio(audio: AVAsset, start: CMTime, timeRage: CMTimeRange, audioCompositionTrack: AVMutableCompositionTrack) {
         if let track = audio.tracks(withMediaType: .audio).first {
             try? audioCompositionTrack.insertTimeRange(timeRage, of: track, at: start)
         }
