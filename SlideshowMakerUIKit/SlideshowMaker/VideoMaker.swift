@@ -86,7 +86,7 @@ public class VideoMakerOld: NSObject {
         self.isMovement = true
     }
     
-    public func exportVideo(audio: AVURLAsset?, audioTimeRange: CMTimeRange?, completed: @escaping CompletedCombineBlock) -> VideoMakerOldgit  {
+    public func exportVideo(audio: AVURLAsset?, audioTimeRange: CMTimeRange?, completed: @escaping CompletedCombineBlock) -> VideoMakerOld  {
         self.createDirectory()
         self.currentProgress = 0.0
         self.combineVideo { (success, url) in
