@@ -7,7 +7,7 @@ public enum PhotoAsset {
     case video(_ asset: AVAsset)
 }
 
-public class VideoMaker2: NSObject {
+public class VideoMaker: NSObject {
     public typealias Completion = (URL?) -> Void
 
     public static func makeVideo(photoAssets: [PhotoAsset], audioAsset: AVAsset?, completion: @escaping Completion) {
