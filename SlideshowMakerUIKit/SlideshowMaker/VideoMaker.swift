@@ -208,18 +208,21 @@ public class VideoMaker: NSObject {
     }
 
     private static func animateImage(for layer: CALayer, beginTime: CMTime) {
-        layer.opacity = 0
-        let beginTimeSecond = beginTime.seconds == 0 ? AVCoreAnimationBeginTimeAtZero : beginTime.seconds
-        let fadeinAnimation = CABasicAnimation.fadeIn(beginTime: beginTimeSecond, duration: 1)
+        let beginTimeSeconds = beginTime.seconds
 
-        let fadeOutAnimation = CABasicAnimation.fadeOut(beginTime: CMTimeAdd(beginTime, imageDuration).seconds, duration: 1)
+        // to perform fade in, opacity on the layer needs to be 0 before the animation
+        // if the beginning of video is a image, opacity 0 results in blank screen of video before play, thus skip fade in initially
+        if beginTimeSeconds != 0 {
+            layer.opacity = 0
+            let fadeinAnimation = CABasicAnimation.fadeIn(beginTime: beginTimeSeconds, duration: 1)
+            layer.add(fadeinAnimation, forKey: "FadeIn")
+        }
 
-        layer.add(fadeinAnimation, forKey: "FadeIn")
-
-        if let randomAnimation = getRandomAnimation(for: layer, beginTime: beginTimeSecond + 1, duration: 1) {
+        if let randomAnimation = getRandomAnimation(for: layer, beginTime: beginTimeSeconds + 1, duration: 1) {
             layer.add(randomAnimation, forKey: "Random")
         }
 
+        let fadeOutAnimation = CABasicAnimation.fadeOut(beginTime: CMTimeAdd(beginTime, imageDuration).seconds, duration: 1)
         layer.add(fadeOutAnimation, forKey: "fadeOut")
     }
 
