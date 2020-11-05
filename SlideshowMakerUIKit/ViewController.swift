@@ -126,21 +126,31 @@ class ViewController: UIViewController {
     private func playVideo(videoUrl: URL) {
         DispatchQueue.main.async {
             let player = AVPlayer(url: videoUrl)
-            let playerLayer = AVPlayerLayer(player: player)
-            self.view.layer.addSublayer(playerLayer)
-            playerLayer.frame = self.view.layer.bounds
-            playerLayer.videoGravity = .resize
-            player.play()
+//            let playerLayer = AVPlayerLayer(player: player)
+//            self.view.layer.addSublayer(playerLayer)
+//            playerLayer.frame = self.view.layer.bounds
+//            playerLayer.videoGravity = .resize
+//            player.play()
             
             
-//            player.allowsExternalPlayback = true
-//            let playerVC = AVPlayerViewController()
-//            playerVC.player = player
-//            playerVC.videoGravity = .resize
-//            self.present(playerVC, animated: true) {
-//                //noop
-//            }
+            player.allowsExternalPlayback = true
+            let playerVC = AVPlayerViewController()
+            playerVC.player = player
+            playerVC.videoGravity = .resizeAspectFill
+            playerVC.view.frame = self.view.bounds
+
+            self.present(playerVC, animated: true) { () -> Void in
+                let label = UILabel(frame: CGRect(x: 10, y: self.view.frame.height - 180, width: self.view.frame.width - 10, height: 180))
+                label.text = "Some Text Here"
+                label.font = UIFont.systemFont(ofSize: 32, weight: .bold)
+                label.textColor = .white
+                label.sizeToFit()
+                
+                if let contentOverlay = playerVC.contentOverlayView {
+                    contentOverlay.addSubview(label)
+                }
+                
+            }
         }
-        
     }
 }
