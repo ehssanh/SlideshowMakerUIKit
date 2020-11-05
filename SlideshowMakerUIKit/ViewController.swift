@@ -13,6 +13,14 @@ class ViewController: UIViewController {
 
     private let images = [#imageLiteral(resourceName: "img0"), #imageLiteral(resourceName: "img1"), #imageLiteral(resourceName: "img2"), #imageLiteral(resourceName: "img3")]
 
+    private let images2 = [
+        #imageLiteral(resourceName: "image1"),
+        #imageLiteral(resourceName: "image2"),
+        #imageLiteral(resourceName: "image3"),
+        #imageLiteral(resourceName: "image4"),
+        #imageLiteral(resourceName: "image5")
+    ]
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -74,7 +82,7 @@ class ViewController: UIViewController {
                               "livePhoto5",
                               "livePhoto6"]
 
-        var photoAssets: [PhotoAsset] = images.map { .photo($0) }
+        var photoAssets: [PhotoAsset] = images2.map { PhotoAsset.photo($0) }
 
         livePhotosName.forEach { fileName in
             if let videoUrl = Bundle.main.url(forResource: fileName, withExtension: "mov") {
@@ -87,10 +95,24 @@ class ViewController: UIViewController {
 
         if let audioURL = Bundle.main.url(forResource: "ehssan_classical_trimmed", withExtension: "mp3") {
             audioAsset = AVURLAsset(url: audioURL)
-            let audioDuration = CMTime(seconds: 30, preferredTimescale: audioAsset!.duration.timescale)
         }
 
-        VideoMaker.makeVideo(photoAssets: photoAssets, audioAsset: audioAsset) { videoUrl in
+        let firstLineAttributes: [NSAttributedString.Key: Any] = [
+            .font: UIFont.systemFont(ofSize: 32, weight: .semibold),
+            .foregroundColor: UIColor.white,
+        ]
+
+        let secondLineAttributes: [NSAttributedString.Key: Any] = [
+            .font: UIFont.systemFont(ofSize: 18, weight: .semibold),
+            .foregroundColor: UIColor.white,
+        ]
+
+        let attributedString = NSMutableAttributedString(string: "Trip to Whistler \n", attributes: firstLineAttributes)
+        attributedString.append(NSAttributedString(string: "July 07 - July 15", attributes: secondLineAttributes))
+        
+        let videoText = VideoText(attributedString: attributedString, beginTime: 0, duration: 3, position: .topLeft)
+
+        VideoMaker.makeVideo(photoAssets: photoAssets, audioAsset: audioAsset, videoText: videoText) { videoUrl in
             if let url = videoUrl {
                 print(url)  // /Library/Mov/merge.mov
                 self.playVideo(videoUrl: url)
@@ -117,6 +139,7 @@ class ViewController: UIViewController {
                 print(url)  //
 
                 self.playVideo(videoUrl: url)
+
             }
         }).progress = { progress in
             print(progress)
@@ -132,7 +155,7 @@ class ViewController: UIViewController {
 //            playerLayer.videoGravity = .resize
 //            player.play()
             
-            
+
             player.allowsExternalPlayback = true
             let playerVC = AVPlayerViewController()
             playerVC.player = player
@@ -140,12 +163,12 @@ class ViewController: UIViewController {
             playerVC.view.frame = self.view.bounds
 
             self.present(playerVC, animated: true) { () -> Void in
+                player.play()
                 
-                
-                if let contentOverlay = playerVC.contentOverlayView {
-                    contentOverlay.addSubview(createLabel(at: 180, message: "Trip to Whistler", size: 32))
-                    contentOverlay.addSubview(createLabel(at: 140, message: "July 07 - July 15", size: 18))
-                }
+//                if let contentOverlay = playerVC.contentOverlayView {
+//                    contentOverlay.addSubview(createLabel(at: 180, message: "Trip to Whistler", size: 32))
+//                    contentOverlay.addSubview(createLabel(at: 140, message: "July 07 - July 15", size: 18))
+//                }
                 
             }
         }

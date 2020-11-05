@@ -15,6 +15,9 @@
 		08E0EE0F255341960006FFB3 /* livePhoto5.mov in Resources */ = {isa = PBXBuildFile; fileRef = 08E0EE09255341950006FFB3 /* livePhoto5.mov */; };
 		08E0EE10255341960006FFB3 /* livePhoto3.mov in Resources */ = {isa = PBXBuildFile; fileRef = 08E0EE0A255341960006FFB3 /* livePhoto3.mov */; };
 		08E0EE11255341960006FFB3 /* livePhoto6.mov in Resources */ = {isa = PBXBuildFile; fileRef = 08E0EE0B255341960006FFB3 /* livePhoto6.mov */; };
+		08E0EE1F25534CF30006FFB3 /* VideoHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E0EE1E25534CF30006FFB3 /* VideoHelper.swift */; };
+		08E0EE622553D8C00006FFB3 /* chill.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 08E0EE1C255344B50006FFB3 /* chill.mp4 */; };
+		08E0EE642553D8CD0006FFB3 /* blank.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 08E0EE5B2553CCE60006FFB3 /* blank.mp4 */; };
 		BF0E863725508D6900CBF319 /* VideoMontage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0E863625508D6900CBF319 /* VideoMontage.swift */; };
 		BF0E863A2550AA6400CBF319 /* MontageMedia.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0E86392550AA6400CBF319 /* MontageMedia.swift */; };
 		BF0E863D2550AA7F00CBF319 /* MontageRenderConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0E863C2550AA7F00CBF319 /* MontageRenderConfig.swift */; };
@@ -43,6 +46,8 @@
 		08E0EE0A255341960006FFB3 /* livePhoto3.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = livePhoto3.mov; sourceTree = "<group>"; };
 		08E0EE0B255341960006FFB3 /* livePhoto6.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = livePhoto6.mov; sourceTree = "<group>"; };
 		08E0EE1C255344B50006FFB3 /* chill.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = chill.mp4; sourceTree = "<group>"; };
+		08E0EE1E25534CF30006FFB3 /* VideoHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoHelper.swift; sourceTree = "<group>"; };
+		08E0EE5B2553CCE60006FFB3 /* blank.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = blank.mp4; sourceTree = "<group>"; };
 		BF0E863625508D6900CBF319 /* VideoMontage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoMontage.swift; sourceTree = "<group>"; };
 		BF0E86392550AA6400CBF319 /* MontageMedia.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MontageMedia.swift; sourceTree = "<group>"; };
 		BF0E863C2550AA7F00CBF319 /* MontageRenderConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MontageRenderConfig.swift; sourceTree = "<group>"; };
@@ -77,6 +82,7 @@
 		08E0EDE7255330770006FFB3 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				08E0EE5B2553CCE60006FFB3 /* blank.mp4 */,
 				08E0EE1C255344B50006FFB3 /* chill.mp4 */,
 				08E0EDEB255330770006FFB3 /* sound.mp3 */,
 				08E0EE06255341950006FFB3 /* livePhoto1.mov */,
@@ -110,6 +116,7 @@
 				BF495514255329F1003132EC /* VideoExporter.swift */,
 				BF495516255329F1003132EC /* VideoMakerOld.swift */,
 				08E0EDE425532F7C0006FFB3 /* VideoMaker.swift */,
+				08E0EE1E25534CF30006FFB3 /* VideoHelper.swift */,
 			);
 			path = SlideshowMaker;
 			sourceTree = "<group>";
@@ -204,6 +211,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08E0EE642553D8CD0006FFB3 /* blank.mp4 in Resources */,
+				08E0EE622553D8C00006FFB3 /* chill.mp4 in Resources */,
 				08E0EDF3255330770006FFB3 /* sound.mp3 in Resources */,
 				08E0EE0D255341960006FFB3 /* livePhoto2.mov in Resources */,
 				08E0EE0C255341960006FFB3 /* livePhoto1.mov in Resources */,
@@ -234,6 +243,7 @@
 				BF0E863A2550AA6400CBF319 /* MontageMedia.swift in Sources */,
 				BF950307254CC24C0012F0AF /* SceneDelegate.swift in Sources */,
 				BF49551B255329F1003132EC /* VideoMakerOld.swift in Sources */,
+				08E0EE1F25534CF30006FFB3 /* VideoHelper.swift in Sources */,
 				BF49551A255329F1003132EC /* UIImage.swift in Sources */,
 				BF49551C255329F1003132EC /* Constant.swift in Sources */,
 				BF495519255329F1003132EC /* VideoExporter.swift in Sources */,
@@ -387,6 +397,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NUH2WB992L;
 				INFOPLIST_FILE = SlideshowMakerUIKit/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -406,6 +417,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NUH2WB992L;
 				INFOPLIST_FILE = SlideshowMakerUIKit/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
