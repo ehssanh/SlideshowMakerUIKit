@@ -28,7 +28,6 @@ public class VideoMaker: NSObject {
 
     public static let imageDuration: CMTime = CMTime(seconds: 3, preferredTimescale: 600)
 
-
     private static var imageAsset: AVAsset? = {
         guard let blankVideoUrl = Bundle.main.url(forResource: "blank", withExtension: "mp4") else {
             return nil
@@ -145,7 +144,7 @@ public class VideoMaker: NSObject {
         videoComposition.renderSize = renderSize
         videoComposition.animationTool = AVVideoCompositionCoreAnimationTool(postProcessingAsVideoLayer: videoLayer, in: outputLayer)
 
-        guard let exporter = AVAssetExportSession(asset: mixComposition, presetName: AVAssetExportPresetMediumQuality) else {
+        guard let exporter = AVAssetExportSession(asset: mixComposition, presetName: AVAssetExportPresetHighestQuality) else {
             completion(nil)
             return
         }
@@ -202,14 +201,7 @@ public class VideoMaker: NSObject {
 
         textLayer.frame = CGRect(x: xPosition, y: yPosition, width: textSize.width, height: textSize.height)
 
-        let fadeOutAnimation = CABasicAnimation.init(keyPath: "opacity")
-        fadeOutAnimation.duration = 1
-        fadeOutAnimation.fromValue = 1
-        fadeOutAnimation.toValue = 0
-        fadeOutAnimation.isRemovedOnCompletion = false
-        fadeOutAnimation.beginTime = videoText.beginTime + videoText.duration
-        fadeOutAnimation.fillMode = CAMediaTimingFillMode.forwards
-
+        let fadeOutAnimation = CABasicAnimation.fadeOut(beginTime: videoText.beginTime + videoText.duration, duration: 1)
         textLayer.add(fadeOutAnimation, forKey: "HideText")
 
         return textLayer
@@ -224,14 +216,14 @@ public class VideoMaker: NSObject {
 
         layer.add(fadeinAnimation, forKey: "FadeIn")
 
-        if let randomAnimation = createRandomAnimation(for: layer, beginTime: beginTimeSecond + 1, duration: 1) {
+        if let randomAnimation = getRandomAnimation(for: layer, beginTime: beginTimeSecond + 1, duration: 1) {
             layer.add(randomAnimation, forKey: "Random")
         }
 
         layer.add(fadeOutAnimation, forKey: "fadeOut")
     }
 
-    private static func createRandomAnimation(for layer: CALayer, beginTime: Double, duration: Double) -> CABasicAnimation? {
+    private static func getRandomAnimation(for layer: CALayer, beginTime: Double, duration: Double) -> CABasicAnimation? {
         let randomAnimationType = ImageAnimation.allCases.randomElement()
 
         switch randomAnimationType {
@@ -243,17 +235,17 @@ public class VideoMaker: NSObject {
 
         case .moveLeft:
             let fromPosition = layer.position
-            let toPosition = CGPoint(x: fromPosition.x - 50, y: fromPosition.y)
+            let toPosition = CGPoint(x: fromPosition.x - 40, y: fromPosition.y)
             return CABasicAnimation.move(beginTime: beginTime, duration: duration, fromPosition: fromPosition, toPosition: toPosition)
 
         case .moveRight:
             let fromPosition = layer.position
-            let toPosition = CGPoint(x: fromPosition.x + 50, y: fromPosition.y)
+            let toPosition = CGPoint(x: fromPosition.x + 40, y: fromPosition.y)
             return CABasicAnimation.move(beginTime: beginTime, duration: duration, fromPosition: fromPosition, toPosition: toPosition)
 
         case .moveTopLeft:
             let fromPosition = layer.position
-            let toPosition = CGPoint(x: fromPosition.x - 30, y: fromPosition.y - 30)
+            let toPosition = CGPoint(x: fromPosition.x - 40, y: fromPosition.y - 40)
             return CABasicAnimation.move(beginTime: beginTime, duration: duration, fromPosition: fromPosition, toPosition: toPosition)
 
         case .moveTopRight:
@@ -295,11 +287,11 @@ private extension UIImage {
 
 extension CABasicAnimation {
     class func zoomIn(beginTime: CFTimeInterval, duration: CFTimeInterval) -> CABasicAnimation {
-        return CABasicAnimation.animate(keyPath: "transform.scale", fromValue: 1, toValue: 1.4, beginTime: beginTime, duration: duration)
+        return animate(keyPath: "transform.scale", fromValue: 1, toValue: 1.3, beginTime: beginTime, duration: duration)
     }
 
     class func zoomOut(beginTime: CFTimeInterval, duration: CFTimeInterval) -> CABasicAnimation {
-        return CABasicAnimation.animate(keyPath: "transform.scale", fromValue: 1, toValue: 0.7, beginTime: beginTime, duration: duration)
+        return animate(keyPath: "transform.scale", fromValue: 1, toValue: 0.9, beginTime: beginTime, duration: duration)
     }
 
     class func fadeIn(beginTime: CFTimeInterval, duration: CFTimeInterval) -> CABasicAnimation {
@@ -336,4 +328,3 @@ enum ImageAnimation: CaseIterable {
     case moveTopLeft
     case moveTopRight
 }
-
