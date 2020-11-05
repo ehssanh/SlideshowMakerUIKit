@@ -140,17 +140,26 @@ class ViewController: UIViewController {
             playerVC.view.frame = self.view.bounds
 
             self.present(playerVC, animated: true) { () -> Void in
-                let label = UILabel(frame: CGRect(x: 10, y: self.view.frame.height - 180, width: self.view.frame.width - 10, height: 180))
-                label.text = "Some Text Here"
-                label.font = UIFont.systemFont(ofSize: 32, weight: .bold)
-                label.textColor = .white
-                label.sizeToFit()
+                
                 
                 if let contentOverlay = playerVC.contentOverlayView {
-                    contentOverlay.addSubview(label)
+                    contentOverlay.addSubview(createLabel(at: 180, message: "Trip to Whistler", size: 32))
+                    contentOverlay.addSubview(createLabel(at: 140, message: "July 07 - July 15", size: 18))
                 }
                 
             }
         }
+        
+        func createLabel(at bottomMargin:CGFloat, message:String, size:CGFloat) -> UILabel{
+            let label = UILabel(frame: CGRect(x: 20, y: self.view.frame.height - bottomMargin, width: self.view.frame.width - 10, height: 40))
+            label.text = message
+            label.font = UIFont.systemFont(ofSize: size, weight: .semibold)
+            label.textColor = .white
+            label.sizeToFit()
+            
+            return label
+        }
     }
+    
+    
 }
