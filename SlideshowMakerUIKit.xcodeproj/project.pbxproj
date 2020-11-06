@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		08030DCD2555BD0600E14849 /* earth_watch.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 08030DCC2555BD0600E14849 /* earth_watch.mp3 */; };
+		08030DD12555C3CF00E14849 /* happy_kid.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 08030DD02555C3CF00E14849 /* happy_kid.mp3 */; };
 		08E0EDE525532F7C0006FFB3 /* VideoMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E0EDE425532F7C0006FFB3 /* VideoMaker.swift */; };
 		08E0EDF3255330770006FFB3 /* sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 08E0EDEB255330770006FFB3 /* sound.mp3 */; };
 		08E0EE0C255341960006FFB3 /* livePhoto1.mov in Resources */ = {isa = PBXBuildFile; fileRef = 08E0EE06255341950006FFB3 /* livePhoto1.mov */; };
@@ -37,6 +39,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		08030DCC2555BD0600E14849 /* earth_watch.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = earth_watch.mp3; sourceTree = "<group>"; };
+		08030DD02555C3CF00E14849 /* happy_kid.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = happy_kid.mp3; sourceTree = "<group>"; };
 		08E0EDE425532F7C0006FFB3 /* VideoMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoMaker.swift; sourceTree = "<group>"; };
 		08E0EDEB255330770006FFB3 /* sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sound.mp3; sourceTree = "<group>"; };
 		08E0EE06255341950006FFB3 /* livePhoto1.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = livePhoto1.mov; sourceTree = "<group>"; };
@@ -82,9 +86,11 @@
 		08E0EDE7255330770006FFB3 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				08030DCC2555BD0600E14849 /* earth_watch.mp3 */,
 				08E0EE5B2553CCE60006FFB3 /* blank.mp4 */,
 				08E0EE1C255344B50006FFB3 /* chill.mp4 */,
 				08E0EDEB255330770006FFB3 /* sound.mp3 */,
+				08030DD02555C3CF00E14849 /* happy_kid.mp3 */,
 				08E0EE06255341950006FFB3 /* livePhoto1.mov */,
 				08E0EE07255341950006FFB3 /* livePhoto2.mov */,
 				08E0EE0A255341960006FFB3 /* livePhoto3.mov */,
@@ -220,10 +226,12 @@
 				08E0EE0E255341960006FFB3 /* livePhoto4.mov in Resources */,
 				BF95030E254CC24F0012F0AF /* Assets.xcassets in Resources */,
 				08E0EE0F255341960006FFB3 /* livePhoto5.mov in Resources */,
+				08030DD12555C3CF00E14849 /* happy_kid.mp3 in Resources */,
 				BF0E86572551CF1F00CBF319 /* ehssan_classical_trimmed.mp3 in Resources */,
 				08E0EE11255341960006FFB3 /* livePhoto6.mov in Resources */,
 				BF95030C254CC24C0012F0AF /* Main.storyboard in Resources */,
 				08E0EE10255341960006FFB3 /* livePhoto3.mov in Resources */,
+				08030DCD2555BD0600E14849 /* earth_watch.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -395,7 +403,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = NUH2WB992L;
+				DEVELOPMENT_TEAM = UBF8T346G9;
 				INFOPLIST_FILE = SlideshowMakerUIKit/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -415,7 +423,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = NUH2WB992L;
+				DEVELOPMENT_TEAM = UBF8T346G9;
 				INFOPLIST_FILE = SlideshowMakerUIKit/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (

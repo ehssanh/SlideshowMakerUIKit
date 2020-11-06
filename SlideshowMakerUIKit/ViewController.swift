@@ -21,6 +21,8 @@ class ViewController: UIViewController {
         #imageLiteral(resourceName: "image5")
     ]
 
+
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -93,12 +95,12 @@ class ViewController: UIViewController {
 
         var audioAsset: AVURLAsset?
 
-        if let audioURL = Bundle.main.url(forResource: "ehssan_classical_trimmed", withExtension: "mp3") {
+        if let audioURL = Bundle.main.url(forResource: "happy_kid", withExtension: "mp3") {
             audioAsset = AVURLAsset(url: audioURL)
         }
 
         let firstLineAttributes: [NSAttributedString.Key: Any] = [
-            .font: UIFont.systemFont(ofSize: 32, weight: .semibold),
+            .font: UIFont.systemFont(ofSize: 34, weight: .bold),
             .foregroundColor: UIColor.white,
         ]
 
@@ -107,12 +109,12 @@ class ViewController: UIViewController {
             .foregroundColor: UIColor.white,
         ]
 
-        let attributedString = NSMutableAttributedString(string: "Trip to Whistler \n", attributes: firstLineAttributes)
-        attributedString.append(NSAttributedString(string: "July 07 - July 15", attributes: secondLineAttributes))
+        let attributedString = NSMutableAttributedString(string: "GRANITE FALLS\n", attributes: firstLineAttributes)
+        attributedString.append(NSAttributedString(string: "Jun 18, 2017", attributes: secondLineAttributes))
         
         let videoText = VideoText(attributedString: attributedString, beginTime: 0, duration: 3, position: .topLeft)
 
-        VideoMaker.makeVideo(photoAssets: photoAssets, audioAsset: audioAsset, videoText: videoText) { videoUrl in
+        VideoMaker.makeVideo(photoAssets: photoAssets.shuffled(), audioAsset: audioAsset, videoText: videoText) { videoUrl in
             if let url = videoUrl {
                 print(url)  // /Library/Mov/merge.mov
                 self.playVideo(videoUrl: url)

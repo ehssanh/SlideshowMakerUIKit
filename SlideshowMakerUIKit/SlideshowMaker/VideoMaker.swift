@@ -210,6 +210,8 @@ public class VideoMaker: NSObject {
     private static func animateImage(for layer: CALayer, beginTime: CMTime) {
         let beginTimeSeconds = beginTime.seconds
 
+        let animationDuration = imageDuration.seconds + 0.5
+
         // to perform fade in, opacity on the layer needs to be 0 before the animation
         // if the beginning of video is a image, opacity 0 results in blank screen of video before play, thus skip fade in initially
         if beginTimeSeconds != 0 {
@@ -218,18 +220,24 @@ public class VideoMaker: NSObject {
             layer.add(fadeinAnimation, forKey: "FadeIn")
         }
 
-        if let randomAnimation = getRandomAnimation(for: layer, beginTime: beginTimeSeconds + 1, duration: 1) {
-            layer.add(randomAnimation, forKey: "Random")
-        }
+        let zoomInAnimation = createAnimation(.zoomIn, for: layer, beginTime: beginTimeSeconds, duration: animationDuration)
+
+        layer.add(zoomInAnimation, forKey: "ZoomIn")
+
+        let moveX = CGFloat.random(in: -50...50)
+        let moveY = CGFloat.random(in: -50...50)
+        let fromPosition = layer.position
+        let toPosition = CGPoint(x: fromPosition.x + moveX, y: fromPosition.y + moveY)
+        let randomMoveAnimation = CABasicAnimation.move(beginTime: beginTimeSeconds, duration: animationDuration, fromPosition: fromPosition, toPosition: toPosition)
+
+        layer.add(randomMoveAnimation, forKey: "RandomMove")
 
         let fadeOutAnimation = CABasicAnimation.fadeOut(beginTime: CMTimeAdd(beginTime, imageDuration).seconds, duration: 1)
         layer.add(fadeOutAnimation, forKey: "fadeOut")
     }
 
-    private static func getRandomAnimation(for layer: CALayer, beginTime: Double, duration: Double) -> CABasicAnimation? {
-        let randomAnimationType = ImageAnimation.allCases.randomElement()
-
-        switch randomAnimationType {
+    private static func createAnimation(_ animationType: ImageAnimation, for layer: CALayer, beginTime: Double, duration: Double) -> CABasicAnimation {
+        switch animationType {
         case .zoomIn:
             return CABasicAnimation.zoomIn(beginTime: beginTime, duration: duration)
 
@@ -255,9 +263,6 @@ public class VideoMaker: NSObject {
             let fromPosition = layer.position
             let toPosition = CGPoint(x: fromPosition.x + 30, y: fromPosition.y + 30)
             return CABasicAnimation.move(beginTime: beginTime, duration: duration, fromPosition: fromPosition, toPosition: toPosition)
-
-        case .none:
-            return nil
         }
     }
 
@@ -323,7 +328,7 @@ extension CABasicAnimation {
     }
 }
 
-enum ImageAnimation: CaseIterable {
+enum ImageAnimation {
     case zoomIn
     case zoomOut
     case moveLeft
